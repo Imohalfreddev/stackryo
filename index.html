@@ -1163,6 +1163,21 @@ footer {
   </div>
 </div>
 
+<div class="modal-overlay" id="passwordModalOverlay">
+  <div class="modal" style="max-width: 420px; padding: 40px;">
+    <button class="modal-close" onclick="closePasswordModal()">✕</button>
+    <div class="modal-title" style="font-size: 24px;">Admin Access</div>
+    <p class="modal-sub" id="passwordModalMessage" style="margin-bottom: 24px;">Please enter the admin password.</p>
+    <div class="form-group" style="margin-bottom: 24px;">
+      <input type="password" id="adminPasswordInput" class="form-input" placeholder="••••••••" onkeypress="handlePasswordKeyPress(event)">
+    </div>
+    <div style="display: flex; gap: 12px; justify-content: flex-end;">
+      <button class="toggle-add-btn" style="margin-top: 0; padding: 10px 16px;" onclick="closePasswordModal()">Cancel</button>
+      <button class="btn-primary" onclick="submitPassword()">Confirm →</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // Cursor
 const cursor = document.getElementById('cursor');
@@ -1181,7 +1196,7 @@ toggle.addEventListener('click', () => {
   toggle.textContent = dark ? '☀️' : '🌙';
 });
 
-// Modal
+// Contact Modal Logic
 function openModal() { document.getElementById('modalOverlay').classList.add('open'); return false; }
 function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
 document.getElementById('modalOverlay').addEventListener('click', e => { if(e.target === e.currentTarget) closeModal(); });
@@ -1199,32 +1214,121 @@ document.getElementById('contactForm').addEventListener('submit', async function
   } catch { btn.textContent = 'Error — Try Again'; }
 });
 
-// Portfolio management
+
+// ==========================================
+// PORTFOLIO MANAGEMENT (CUSTOM PASSWORD MODAL)
+// ==========================================
 let projCount = 2;
-function deleteProject(id) { if(confirm('Remove this project?')) document.getElementById(id).remove(); }
-function editProject(id) {
+
+// >>> CHANGE YOUR PASSWORD HERE <<<
+const adminPassword = "password2025"; 
+let passwordResolve = null;
+
+// Custom Ask Password Function
+function askForPassword(message) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('passwordModalOverlay');
+    document.getElementById('passwordModalMessage').textContent = message;
+    const input = document.getElementById('adminPasswordInput');
+    input.value = ''; // clear input
+    modal.classList.add('open');
+    input.focus(); // auto-focus the typing area
+    passwordResolve = resolve;
+  });
+}
+
+function closePasswordModal() {
+  document.getElementById('passwordModalOverlay').classList.remove('open');
+  if (passwordResolve) {
+    passwordResolve(null); // Return null on cancel
+    passwordResolve = null;
+  }
+}
+
+function submitPassword() {
+  const val = document.getElementById('adminPasswordInput').value;
+  document.getElementById('passwordModalOverlay').classList.remove('open');
+  if (passwordResolve) {
+    passwordResolve(val);
+    passwordResolve = null;
+  }
+}
+
+function handlePasswordKeyPress(e) {
+  if (e.key === 'Enter') submitPassword();
+}
+
+// Close password modal if clicking outside the box
+document.getElementById('passwordModalOverlay').addEventListener('click', e => { 
+  if(e.target === e.currentTarget) closePasswordModal(); 
+});
+
+
+// Action Functions (Now using the sleek Custom Modal)
+async function deleteProject(id) { 
+  const pass = await askForPassword("Enter Admin Password to delete this project:");
+  if (pass !== adminPassword) {
+    if (pass !== null) alert("Incorrect password. Action cancelled.");
+    return;
+  }
+  
+  if(confirm('Are you sure you want to remove this project?')) {
+    document.getElementById(id).remove(); 
+  }
+}
+
+async function editProject(id) {
+  const pass = await askForPassword("Enter Admin Password to edit this project:");
+  if (pass !== adminPassword) {
+    if (pass !== null) alert("Incorrect password. Action cancelled.");
+    return;
+  }
+
   const card = document.getElementById(id);
   const title = card.querySelector('.portfolio-card-title');
   const stack = card.querySelector('.portfolio-card-stack');
   const desc = card.querySelector('.portfolio-card-desc');
   const link = card.querySelector('.portfolio-card-link');
+  
   const newTitle = prompt('Project name:', title.textContent);
   if (newTitle) title.textContent = newTitle;
+  
   const newStack = prompt('Tech stack:', stack.textContent);
   if (newStack) stack.textContent = newStack;
+  
   const newDesc = prompt('Description:', desc.textContent);
   if (newDesc) desc.textContent = newDesc;
-  const newUrl = prompt('Live URL:', link.href);
-  if (newUrl) { link.href = newUrl; }
+  
+  if (link) {
+    const newUrl = prompt('Live URL:', link.href);
+    if (newUrl) { link.href = newUrl; }
+  }
 }
-function toggleAddForm() { document.getElementById('addLinkForm').classList.toggle('open'); }
+
+async function toggleAddForm() { 
+  const form = document.getElementById('addLinkForm');
+  
+  // Only ask for password if they are trying to OPEN the form
+  if (!form.classList.contains('open')) {
+    const pass = await askForPassword("Enter Admin Password to add a new project:");
+    if (pass !== adminPassword) {
+      if (pass !== null) alert("Incorrect password. Action cancelled.");
+      return;
+    }
+  }
+  
+  form.classList.toggle('open'); 
+}
+
 function addProject() {
   const title = document.getElementById('newTitle').value;
   const stack = document.getElementById('newStack').value;
   const url = document.getElementById('newUrl').value;
   const desc = document.getElementById('newDesc').value;
+  
   if (!title) return alert('Project name required');
   projCount++;
+  
   const card = document.createElement('div');
   card.className = 'portfolio-card';
   card.id = 'proj-' + projCount;
@@ -1240,12 +1344,14 @@ function addProject() {
       <button class="port-btn" onclick="editProject('proj-${projCount}')">Edit</button>
       <button class="port-btn danger" onclick="deleteProject('proj-${projCount}')">Delete</button>
     </div>`;
+    
   document.getElementById('portfolioGrid').appendChild(card);
+  
   document.getElementById('newTitle').value = '';
   document.getElementById('newStack').value = '';
   document.getElementById('newUrl').value = '';
   document.getElementById('newDesc').value = '';
-  toggleAddForm();
+  toggleAddForm(); // Automatically close form after adding
 }
 
 // Mobile Floating Cards Toggle and Auto-Hide Logic
@@ -1257,7 +1363,6 @@ function toggleCards() {
   // Clear any existing timer so it doesn't close prematurely
   clearTimeout(cardTimer);
 
-  // If the cards are now showing, set the timer to hide them after 2 minutes
   if (cards.classList.contains('show-cards')) {
     cardTimer = setTimeout(() => {
       cards.classList.remove('show-cards');
