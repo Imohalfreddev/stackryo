@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackryo — Build With Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root[data-theme="dark"] {
+  --bg: #080808;
+  --bg2: #0f0f0f;
+  --bg3: #161616;
+  --ink: #f0ede8;
+  --ink2: #9a9590;
+  --accent: #c8f135;
+  --accent2: #a8d420;
+  --border: rgba(240,237,232,0.08);
+  --card: #111111;
+  --glow: rgba(200,241,53,0.15);
+}
+:root[data-theme="light"] {
+  --bg: #f5f2ed;
+  --bg2: #eceae4;
+  --bg3: #e2dfd8;
+  --ink: #0a0a0a;
+  --ink2: #5a5650;
+  --accent: #1a1a1a;
+  --accent2: #333;
+  --border: rgba(10,10,10,0.1);
+  --card: #ffffff;
+  --glow: rgba(0,0,0,0.05);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.4s, color 0.4s;
+  cursor: none;
+}
+
+/* Custom cursor */
+.cursor {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s, width 0.2s, height 0.2s;
+  transform: translate(-50%, -50%);
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s, opacity 0.2s;
+  opacity: 0.5;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  backdrop-filter: blur(20px);
+  transition: background 0.4s;
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.logo span { color: var(--accent); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--ink2);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  cursor: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+.theme-toggle:hover { background: var(--border); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding: 140px 48px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-label::before { display: none; }
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin-bottom: 32px;
+}
+
+.hero-title em {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent);
+}
+
+.hero-desc {
+  color: var(--ink2);
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 420px;
+  margin-bottom: 44px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #0a0a0a;
+  padding: 14px 32px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border: none;
+  cursor: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--glow);
+}
+
+.btn-secondary {
+  color: var(--ink);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--ink); }
+
+/* Hero right — floating cards */
+.hero-right {
+  position: relative;
+  height: 480px;
+}
+
+.float-card {
+  position: absolute;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  animation: floatY 4s ease-in-out infinite;
+}
+.float-card:nth-child(1) { top: 0; right: 0; width: 240px; animation-delay: 0s; }
+.float-card:nth-child(2) { top: 140px; left: 20px; width: 200px; animation-delay: 1s; }
+.float-card:nth-child(3) { bottom: 60px; right: 40px; width: 220px; animation-delay: 2s; }
+
+@keyframes floatY {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.float-card-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.float-card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.float-card-sub { font-size: 11px; color: var(--ink2); }
+
+.float-dot {
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* MARQUEE */
+.marquee-wrap {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  overflow: hidden;
+  background: var(--bg2);
+}
+.marquee-track {
+  display: flex;
+  gap: 64px;
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+.marquee-item {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink2);
+  flex-shrink: 0;
+}
+.marquee-item span { color: var(--accent); margin-right: 8px; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* SERVICES */
+.services {
+  padding: 120px 48px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 64px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+.section-title em {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.section-desc {
+  color: var(--ink2);
+  font-size: 12px;
+  max-width: 280px;
+  line-height: 1.8;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.service-card {
+  background: var(--bg);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.service-card:hover { background: var(--bg2); }
+.service-card:hover::after { transform: scaleX(1); }
+
+.service-num {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  font-family: 'DM Mono', monospace;
+}
+
+.service-icon {
+  font-size: 28px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.service-desc {
+  color: var(--ink2);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 20px;
+}
+.tag {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink2);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+}
+
+/* PROCESS */
+.process {
+  padding: 120px 48px;
+  background: var(--bg2);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  margin-top: 64px;
+}
+
+.step {
+  background: var(--bg2);
+  padding: 40px 32px;
+}
+
+.step-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: -4px;
+}
+
+.step-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.step-desc { font-size: 12px; color: var(--ink2); line-height: 1.8; }
+
+/* WHY US */
+.why {
+  padding: 120px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.why-left { }
+.why-list { margin-top: 48px; }
+.why-item {
+  display: flex;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+.why-item:first-child { border-top: 1px solid var(--border); }
+.why-num {
+  font-size: 11px;
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  min-width: 28px;
+  padding-top: 2px;
+}
+.why-text-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.why-text-desc { font-size: 12px; color: var(--ink2); line-height: 1.8; }
+
+.why-right {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 48px;
+  position: relative;
+}
+.why-right::before {
+  content: '"';
+  font-family: 'Fraunces', serif;
+  font-size: 120px;
+  color: var(--accent);
+  opacity: 0.2;
+  position: absolute;
+  top: -20px; left: 32px;
+  line-height: 1;
+}
+.testimonial-text {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  position: relative;
+}
+.testimonial-author {
+  font-size: 12px;
+  color: var(--ink2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-author::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--accent);
+}
+
+/* STACK */
+.stack-section {
+  padding: 80px 48px;
+  background: var(--bg3);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+}
+.stack-pill {
+  border: 1px solid var(--border);
+  padding: 8px 20px;
+  font-size: 12px;
+  color: var(--ink2);
+  transition: border-color 0.2s, color 0.2s;
+}
+.stack-pill:hover { border-color: var(--accent); color: var(--ink); }
+
+/* CTA */
+.cta-section {
+  padding: 140px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: 'BUILD';
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(100px, 20vw, 240px);
+  font-weight: 800;
+  color: var(--border);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  letter-spacing: -10px;
+  white-space: nowrap;
+}
+
+.cta-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.cta-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  margin-bottom: 20px;
+  position: relative;
+}
+.cta-title em {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.cta-sub {
+  color: var(--ink2);
+  font-size: 13px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px 48px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-copy { font-size: 11px; color: var(--ink2); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-size: 11px;
+  color: var(--ink2);
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--accent); }
+
+/* CONTACT MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 48px;
+  width: 100%;
+  max-width: 520px;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: none;
+  border: none;
+  color: var(--ink2);
+  font-size: 20px;
+  cursor: none;
+  transition: color 0.2s;
+}
+.modal-close:hover { color: var(--ink); }
+.modal-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+.modal-sub { font-size: 12px; color: var(--ink2); margin-bottom: 32px; }
+.form-group { margin-bottom: 20px; }
+.form-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink2); display: block; margin-bottom: 8px; }
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 12px 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent); }
+.form-textarea { height: 100px; resize: none; }
+.form-select option { background: var(--bg2); }
+
+/* PORTFOLIO */
+.portfolio { padding: 120px 48px; background: var(--bg2); }
+.portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); margin-top: 64px; }
+.portfolio-card { background: var(--bg2); padding: 36px; position: relative; overflow: hidden; transition: background 0.3s; }
+.portfolio-card:hover { background: var(--bg3); }
+.portfolio-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.portfolio-card-num { font-size: 11px; color: var(--accent); letter-spacing: 2px; }
+.portfolio-card-link { font-size: 11px; color: var(--link, #c8f135); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: border-color 0.2s; display: flex; align-items: center; gap: 6px; }
+.portfolio-card-link:hover { border-color: var(--accent); }
+.portfolio-card-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+.portfolio-card-stack { font-size: 11px; color: var(--accent); margin-bottom: 12px; letter-spacing: 1px; }
+.portfolio-card-desc { font-size: 12px; color: var(--ink2); line-height: 1.8; margin-bottom: 20px; }
+.portfolio-actions { display: flex; gap: 8px; }
+.port-btn { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 5px 14px; border: 1px solid var(--border); background: none; color: var(--ink2); cursor: none; transition: all 0.2s; font-family: 'DM Mono', monospace; }
+.port-btn:hover { border-color: var(--accent); color: var(--accent); }
+.port-btn.danger:hover { border-color: #ff4444; color: #ff4444; }
+
+/* Add link form */
+.add-link-form { margin-top: 24px; padding: 24px; border: 1px dashed var(--border); display: none; }
+.add-link-form.open { display: block; }
+.add-link-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 8px; align-items: end; flex-wrap: wrap; }
+.add-btn { background: var(--accent); color: #0a0a0a; border: none; padding: 10px 20px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px; cursor: none; }
+.toggle-add-btn { margin-top: 24px; background: none; border: 1px solid var(--border); color: var(--ink2); padding: 10px 24px; font-family: 'DM Mono', monospace; font-size: 12px; cursor: none; transition: all 0.2s; }
+.toggle-add-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* WhatsApp float */
+.whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 150; background: #25d366; color: white; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s; }
+.whatsapp-float:hover { transform: scale(1.1); }
+
+@media (max-width: 900px) {
+  .portfolio { padding: 80px 24px; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .add-link-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; }
+  .hero-right { display: none; }
+  .services { padding: 80px 24px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process { padding: 80px 24px; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .why { grid-template-columns: 1fr; padding: 80px 24px; }
+  .cta-section { padding: 100px 24px; }
+  footer { padding: 32px 24px; }
+  .stack-section { padding: 60px 24px; }
+  .modal { padding: 32px 24px; margin: 16px; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Stack<span>ryo</span></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#stack">Stack</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle">☀️</button>
+    <a href="#" class="btn-primary" onclick="openModal()">Build With Us →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-label">Software Engineering Studio</div>
+    <h1 class="hero-title">
+      We<br>
+      <em>Build</em><br>
+      Things<br>
+      That Work
+    </h1>
+    <p class="hero-desc">
+      Stackryo is a full-stack software engineering studio. We design, build, and deploy web applications, APIs, and SaaS products — end to end.
+    </p>
+    <div class="hero-cta">
+      <a href="#" class="btn-primary" onclick="openModal()">Start a Project →</a>
+      <a href="#services" class="btn-secondary">See Services ↓</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="float-card">
+      <div class="float-card-label"><span class="float-dot"></span>Live Project</div>
+      <div class="float-card-title">ImohMarket</div>
+      <div class="float-card-sub">Automotive Marketplace · Full Stack</div>
+    </div>
+    <div class="float-card">
+      <div class="float-card-label"><span class="float-dot"></span>Live Project</div>
+      <div class="float-card-title">WorkFlow SaaS</div>
+      <div class="float-card-sub">Employee Management · Multi-Tenant</div>
+    </div>
+    <div class="float-card">
+      <div class="float-card-label">Capability</div>
+      <div class="float-card-title">End-to-End</div>
+      <div class="float-card-sub">Design → Build → Deploy</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item"><span>✦</span> Web Development</span>
+    <span class="marquee-item"><span>✦</span> API Engineering</span>
+    <span class="marquee-item"><span>✦</span> SaaS Products</span>
+    <span class="marquee-item"><span>✦</span> Database Design</span>
+    <span class="marquee-item"><span>✦</span> Cloud Deployment</span>
+    <span class="marquee-item"><span>✦</span> Authentication Systems</span>
+    <span class="marquee-item"><span>✦</span> Full Stack Apps</span>
+    <span class="marquee-item"><span>✦</span> Web Development</span>
+    <span class="marquee-item"><span>✦</span> API Engineering</span>
+    <span class="marquee-item"><span>✦</span> SaaS Products</span>
+    <span class="marquee-item"><span>✦</span> Database Design</span>
+    <span class="marquee-item"><span>✦</span> Cloud Deployment</span>
+    <span class="marquee-item"><span>✦</span> Authentication Systems</span>
+    <span class="marquee-item"><span>✦</span> Full Stack Apps</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our <em>Services</em></h2>
+    </div>
+    <p class="section-desc">From idea to deployed product — we handle every layer of the stack so you don't have to.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <span class="service-icon">🌐</span>
+      <div class="service-name">Web Development</div>
+      <p class="service-desc">Fast, responsive websites and web apps built to convert. From landing pages to complex multi-page platforms.</p>
+      <div class="service-tags">
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">React</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <span class="service-icon">⚙️</span>
+      <div class="service-name">Backend & API</div>
+      <p class="service-desc">Robust REST APIs, database architecture, and server-side logic. Secure, scalable, and production-ready.</p>
+      <div class="service-tags">
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">PostgreSQL</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <span class="service-icon">🚀</span>
+      <div class="service-name">SaaS Development</div>
+      <p class="service-desc">Multi-tenant SaaS platforms with authentication, billing-ready architecture, and role-based access control.</p>
+      <div class="service-tags">
+        <span class="tag">Multi-tenant</span>
+        <span class="tag">JWT Auth</span>
+        <span class="tag">RBAC</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <span class="service-icon">🗄️</span>
+      <div class="service-name">Database Design</div>
+      <p class="service-desc">Schema design, query optimization, and data modelling for applications that need to scale without breaking.</p>
+      <div class="service-tags">
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">SQLAlchemy</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <span class="service-icon">☁️</span>
+      <div class="service-name">Deployment & DevOps</div>
+      <p class="service-desc">Docker containerisation, cloud deployment, and CI/CD setup. Your app live and staying live.</p>
+      <div class="service-tags">
+        <span class="tag">Docker</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Render</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <span class="service-icon">🔐</span>
+      <div class="service-name">Auth Systems</div>
+      <p class="service-desc">Secure login, signup, password reset, and token management. JWT, OAuth2, and session-based flows.</p>
+      <div class="service-tags">
+        <span class="tag">JWT</span>
+        <span class="tag">OAuth2</span>
+        <span class="tag">Passlib</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-header">
+    <div>
+      <div class="section-label">How We Work</div>
+      <h2 class="section-title">The <em>Process</em></h2>
+    </div>
+    <p class="section-desc">Simple, transparent, and built around delivering real results fast.</p>
+  </div>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Discovery</div>
+      <p class="step-desc">We understand your goals, users, and constraints before writing a single line of code.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Architecture</div>
+      <p class="step-desc">We design the system — database schema, API structure, and frontend flow — before building.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Build</div>
+      <p class="step-desc">Full-stack development with regular updates. You see progress, not just a final reveal.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Deploy</div>
+      <p class="step-desc">Production deployment, testing, and handover. We don't disappear after launch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="why-left">
+    <div class="section-label">Why Stackryo</div>
+    <h2 class="section-title">Built <em>different</em></h2>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div>
+          <div class="why-text-title">You talk to the builder</div>
+          <p class="why-text-desc">No account managers, no middlemen. You work directly with the engineer building your product.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div>
+          <div class="why-text-title">Real projects, not demos</div>
+          <p class="why-text-desc">Everything we've built is live and publicly accessible. We don't show you mockups — we show you working products.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div>
+          <div class="why-text-title">End-to-end ownership</div>
+          <p class="why-text-desc">From database design to deployment. One person who understands the full picture — not a fragmented team.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="why-right">
+    <p class="testimonial-text">The best software is built by people who care about the problem, not just the code.</p>
+    <div class="testimonial-author">Stackryo Philosophy</div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Previous Work</div>
+      <h2 class="section-title">Built & <em>Deployed</em></h2>
+    </div>
+    <p class="section-desc">Real products, live and publicly accessible. Click any link to see it yourself.</p>
+  </div>
+
+  <div class="portfolio-grid" id="portfolioGrid">
+    <div class="portfolio-card" id="proj-1">
+      <div class="portfolio-card-top">
+        <div class="portfolio-card-num">01</div>
+        <a href="https://imoh-market.vercel.app/" target="_blank" class="portfolio-card-link">Live ↗</a>
+      </div>
+      <div class="portfolio-card-title">ImohMarket</div>
+      <div class="portfolio-card-stack">HTML · CSS · JavaScript · FastAPI</div>
+      <p class="portfolio-card-desc">Automotive marketplace with buyer/seller roles, vehicle listings, JWT authentication, and inventory management. Fully deployed on Vercel.</p>
+      <div class="portfolio-actions">
+        <button class="port-btn" onclick="editProject('proj-1')">Edit</button>
+        <button class="port-btn danger" onclick="deleteProject('proj-1')">Delete</button>
+      </div>
+    </div>
+    <div class="portfolio-card" id="proj-2">
+      <div class="portfolio-card-top">
+        <div class="portfolio-card-num">02</div>
+        <a href="https://emp-mgmt-kj5w.vercel.app/" target="_blank" class="portfolio-card-link">Live ↗</a>
+      </div>
+      <div class="portfolio-card-title">WorkFlow</div>
+      <div class="portfolio-card-stack">React · FastAPI · PostgreSQL</div>
+      <p class="portfolio-card-desc">Multi-tenant SaaS employee management platform with role-based access, messaging, notifications, and leave request workflows.</p>
+      <div class="portfolio-actions">
+        <button class="port-btn" onclick="editProject('proj-2')">Edit</button>
+        <button class="port-btn danger" onclick="deleteProject('proj-2')">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="toggle-add-btn" onclick="toggleAddForm()">+ Add New Project</button>
+  <div class="add-link-form" id="addLinkForm">
+    <div class="section-label" style="margin-bottom:16px;">New Project</div>
+    <div class="add-link-row">
+      <div class="form-group" style="margin:0">
+        <label class="form-label">Project Name</label>
+        <input type="text" class="form-input" id="newTitle" placeholder="My App">
+      </div>
+      <div class="form-group" style="margin:0">
+        <label class="form-label">Tech Stack</label>
+        <input type="text" class="form-input" id="newStack" placeholder="React · FastAPI">
+      </div>
+      <div class="form-group" style="margin:0">
+        <label class="form-label">Live URL</label>
+        <input type="text" class="form-input" id="newUrl" placeholder="https://...">
+      </div>
+      <button class="add-btn" onclick="addProject()">Add →</button>
+    </div>
+    <div class="form-group" style="margin-top:12px">
+      <label class="form-label">Description</label>
+      <input type="text" class="form-input" id="newDesc" placeholder="Brief description of the project...">
+    </div>
+  </div>
+</section>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/2347066905935" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+<section class="stack-section" id="stack">
+  <div class="section-label">Technologies</div>
+  <h2 class="section-title" style="font-family:'Syne',sans-serif;font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-1px;">Our <em style="font-family:'Fraunces',serif;font-style:italic;font-weight:300;">Stack</em></h2>
+  <div class="stack-grid">
+    <span class="stack-pill">Python</span>
+    <span class="stack-pill">FastAPI</span>
+    <span class="stack-pill">JavaScript</span>
+    <span class="stack-pill">React</span>
+    <span class="stack-pill">HTML5</span>
+    <span class="stack-pill">CSS3</span>
+    <span class="stack-pill">PostgreSQL</span>
+    <span class="stack-pill">SQLite</span>
+    <span class="stack-pill">SQLAlchemy</span>
+    <span class="stack-pill">Docker</span>
+    <span class="stack-pill">Vercel</span>
+    <span class="stack-pill">Render</span>
+    <span class="stack-pill">JWT</span>
+    <span class="stack-pill">REST APIs</span>
+    <span class="stack-pill">Git / GitHub</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-label">Ready?</div>
+  <h2 class="cta-title">Let's <em>Build</em><br>Together</h2>
+  <p class="cta-sub">Tell us what you're building. We'll make it real.</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-primary" onclick="openModal()">Build With Us →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2026 Stackryo · <a href="tel:+2347066905935" style="color:var(--ink2);text-decoration:none;">+234 706 690 5935</a></div>
+  <div class="footer-links">
+    <a href="https://github.com/Imohalfreddev" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/imoh-alfred-99a4a8258" target="_blank">LinkedIn</a>
+    <a href="mailto:imohalfred8@gmail.com">Email</a>
+    <a href="https://wa.me/2347066905935" target="_blank">WhatsApp</a>
+    <a href="#" onclick="openModal()">Contact</a>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">Build With Us</div>
+    <p class="modal-sub">Tell us about your project and we'll get back to you within 24 hours.</p>
+    <form id="contactForm">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-input" placeholder="john@company.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone / WhatsApp (optional)</label>
+        <input type="text" name="phone" class="form-input" placeholder="+234...">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Service</label>
+        <select name="service" class="form-select">
+          <option>Web Development</option>
+          <option>Backend & API</option>
+          <option>SaaS Development</option>
+          <option>Database Design</option>
+          <option>Deployment & DevOps</option>
+          <option>Auth Systems</option>
+          <option>Full Stack App</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Project Brief</label>
+        <textarea name="message" class="form-textarea" placeholder="Tell us what you're building..." required></textarea>
+      </div>
+      <button type="submit" id="submitBtn" class="btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// Cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
+function animateRing() { rx += (mx-rx)*0.12; ry += (my-ry)*0.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(animateRing); }
+animateRing();
+
+// Theme toggle
+const toggle = document.getElementById('themeToggle');
+let dark = true;
+toggle.addEventListener('click', () => {
+  dark = !dark;
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  toggle.textContent = dark ? '☀️' : '🌙';
+});
+
+// Modal
+function openModal() { document.getElementById('modalOverlay').classList.add('open'); return false; }
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+document.getElementById('modalOverlay').addEventListener('click', e => { if(e.target === e.currentTarget) closeModal(); });
+
+// Formspree submission
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Sending...';
+  const data = new FormData(this);
+  try {
+    const res = await fetch('https://formspree.io/f/xvzlywoq', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+    if (res.ok) { btn.textContent = 'Message Sent ✓'; this.reset(); setTimeout(() => { closeModal(); btn.textContent = 'Send Message →'; }, 2000); }
+    else { btn.textContent = 'Error — Try Again'; }
+  } catch { btn.textContent = 'Error — Try Again'; }
+});
+
+// Portfolio management
+let projCount = 2;
+function deleteProject(id) { if(confirm('Remove this project?')) document.getElementById(id).remove(); }
+function editProject(id) {
+  const card = document.getElementById(id);
+  const title = card.querySelector('.portfolio-card-title');
+  const stack = card.querySelector('.portfolio-card-stack');
+  const desc = card.querySelector('.portfolio-card-desc');
+  const link = card.querySelector('.portfolio-card-link');
+  const newTitle = prompt('Project name:', title.textContent);
+  if (newTitle) title.textContent = newTitle;
+  const newStack = prompt('Tech stack:', stack.textContent);
+  if (newStack) stack.textContent = newStack;
+  const newDesc = prompt('Description:', desc.textContent);
+  if (newDesc) desc.textContent = newDesc;
+  const newUrl = prompt('Live URL:', link.href);
+  if (newUrl) { link.href = newUrl; }
+}
+function toggleAddForm() { document.getElementById('addLinkForm').classList.toggle('open'); }
+function addProject() {
+  const title = document.getElementById('newTitle').value;
+  const stack = document.getElementById('newStack').value;
+  const url = document.getElementById('newUrl').value;
+  const desc = document.getElementById('newDesc').value;
+  if (!title) return alert('Project name required');
+  projCount++;
+  const card = document.createElement('div');
+  card.className = 'portfolio-card';
+  card.id = 'proj-' + projCount;
+  card.innerHTML = `
+    <div class="portfolio-card-top">
+      <div class="portfolio-card-num">0${projCount}</div>
+      ${url ? `<a href="${url}" target="_blank" class="portfolio-card-link">Live ↗</a>` : ''}
+    </div>
+    <div class="portfolio-card-title">${title}</div>
+    <div class="portfolio-card-stack">${stack}</div>
+    <p class="portfolio-card-desc">${desc}</p>
+    <div class="portfolio-actions">
+      <button class="port-btn" onclick="editProject('proj-${projCount}')">Edit</button>
+      <button class="port-btn danger" onclick="deleteProject('proj-${projCount}')">Delete</button>
+    </div>`;
+  document.getElementById('portfolioGrid').appendChild(card);
+  document.getElementById('newTitle').value = '';
+  document.getElementById('newStack').value = '';
+  document.getElementById('newUrl').value = '';
+  document.getElementById('newDesc').value = '';
+  toggleAddForm();
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.service-card, .step, .why-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s, transform 0.5s';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
