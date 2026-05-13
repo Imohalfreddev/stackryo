@@ -733,15 +733,28 @@ footer {
 .whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 150; background: #25d366; color: white; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s; }
 .whatsapp-float:hover { transform: scale(1.1); }
 
+/* --- iPad Landscape Catch --- */
+@media (max-width: 1024px) {
+  .hero { 
+    min-height: auto; 
+    align-items: start; 
+    padding-top: 160px; /* Forces it safely below the nav bar */
+  }
+}
+
+/* --- Mobile and Portrait Tablet --- */
 @media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .hero { 
+    grid-template-columns: 1fr; 
+    padding: 140px 24px 60px; 
+    min-height: auto; 
+    align-items: start; 
+  }
+  .hero-right { display: none; }
   .portfolio { padding: 80px 24px; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .add-link-row { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 900px) {
-  nav { padding: 16px 24px; }
-  .hero { grid-template-columns: 1fr; padding: 120px 24px 60px; }
-  .hero-right { display: none; }
   .services { padding: 80px 24px; }
   .services-grid { grid-template-columns: 1fr; }
   .process { padding: 80px 24px; }
@@ -760,7 +773,6 @@ footer {
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="logo">Stack<span>ryo</span></a>
   <div class="nav-right">
@@ -775,7 +787,6 @@ footer {
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <div class="hero-label">Software Engineering Studio</div>
@@ -812,7 +823,6 @@ footer {
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
     <span class="marquee-item"><span>✦</span> Web Development</span>
@@ -832,7 +842,6 @@ footer {
   </div>
 </div>
 
-<!-- SERVICES -->
 <section class="services" id="services">
   <div class="section-header">
     <div>
@@ -912,7 +921,6 @@ footer {
   </div>
 </section>
 
-<!-- PROCESS -->
 <section class="process" id="process">
   <div class="section-header">
     <div>
@@ -945,7 +953,6 @@ footer {
   </div>
 </section>
 
-<!-- WHY -->
 <section class="why">
   <div class="why-left">
     <div class="section-label">Why Stackryo</div>
@@ -980,7 +987,6 @@ footer {
   </div>
 </section>
 
-<!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
   <div class="section-header">
     <div>
@@ -1044,7 +1050,6 @@ footer {
   </div>
 </section>
 
-<!-- WhatsApp -->
 <a href="https://wa.me/2347066905935" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
 <section class="stack-section" id="stack">
   <div class="section-label">Technologies</div>
@@ -1068,7 +1073,6 @@ footer {
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section">
   <div class="cta-label">Ready?</div>
   <h2 class="cta-title">Let's <em>Build</em><br>Together</h2>
@@ -1078,7 +1082,6 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-copy">© 2026 Stackryo · <a href="tel:+2347066905935" style="color:var(--ink2);text-decoration:none;">+234 706 690 5935</a></div>
   <div class="footer-links">
