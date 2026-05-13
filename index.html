@@ -239,6 +239,11 @@ nav {
 }
 .btn-secondary:hover { border-color: var(--ink); }
 
+/* MOBILE PORTFOLIO BUTTON - Hidden on PC */
+.mobile-port-btn {
+  display: none; 
+}
+
 /* Hero right — floating cards */
 .hero-right {
   position: relative;
@@ -733,38 +738,62 @@ footer {
 .whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 150; background: #25d366; color: white; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s; }
 .whatsapp-float:hover { transform: scale(1.1); }
 
-/* --- iPad Landscape Catch --- */
-@media (max-width: 1024px) {
+/* =========================================
+   DEFINITIVE IPAD & MOBILE FIX
+   ========================================= */
+@media screen and (max-width: 1024px) {
+  nav { padding: 16px 24px !important; }
+  
   .hero { 
-    min-height: auto; 
-    align-items: start; 
-    padding-top: 160px; /* Forces it safely below the nav bar */
+    grid-template-columns: 1fr !important; 
+    padding-top: 110px !important; 
+    padding-bottom: 60px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    min-height: auto !important;   
+    align-items: flex-start !important; 
   }
-}
+  
+  /* Make the portfolio button appear on mobile */
+  .mobile-port-btn {
+    display: inline-flex !important;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    background: transparent;
+    padding: 10px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .mobile-port-btn:hover {
+    border-color: var(--accent);
+  }
+  
+  /* Hide cards by default on mobile, but show when active class is applied */
+  .hero-right:not(.show-cards) { 
+    display: none !important; 
+  }
+  
+  .hero-right.show-cards {
+    display: block !important;
+    position: absolute !important;
+    top: 220px !important; /* Positions it nicely below the text */
+    right: 24px !important; /* Adds margin from the screen edge */
+    width: 320px !important; /* Fixes the WorkFlow SaaS card position */
+    height: 480px !important; /* Fixes layout height */
+    z-index: 100 !important;
+    transform: scale(0.75); /* Shrinks it to fit mobile screens perfectly */
+    transform-origin: top right;
+  }
 
-/* --- Mobile and Portrait Tablet --- */
-@media (max-width: 900px) {
-  nav { padding: 16px 24px; }
-  .hero { 
-    grid-template-columns: 1fr; 
-    padding: 140px 24px 60px; 
-    min-height: auto; 
-    align-items: start; 
-  }
-  .hero-right { display: none; }
-  .portfolio { padding: 80px 24px; }
-  .portfolio-grid { grid-template-columns: 1fr; }
-  .add-link-row { grid-template-columns: 1fr 1fr; }
-  .services { padding: 80px 24px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .process { padding: 80px 24px; }
-  .process-steps { grid-template-columns: 1fr 1fr; }
-  .why { grid-template-columns: 1fr; padding: 80px 24px; }
-  .cta-section { padding: 100px 24px; }
-  footer { padding: 32px 24px; }
-  .stack-section { padding: 60px 24px; }
-  .modal { padding: 32px 24px; margin: 16px; }
-  .nav-links { display: none; }
+  .portfolio, .services, .process, .why, .stack-section { padding: 80px 24px !important; }
+  .portfolio-grid, .services-grid, .process-steps, .why, .add-link-row { grid-template-columns: 1fr !important; }
+  .cta-section { padding: 100px 24px !important; }
+  footer { padding: 32px 24px !important; }
+  .modal { padding: 32px 24px !important; margin: 16px !important; }
+  .nav-links { display: none !important; }
 }
 </style>
 </head>
@@ -802,6 +831,8 @@ footer {
     <div class="hero-cta">
       <a href="#" class="btn-primary" onclick="openModal()">Start a Project →</a>
       <a href="#services" class="btn-secondary">See Services ↓</a>
+      
+      <button class="mobile-port-btn" onclick="toggleCards()">View Portfolio</button>
     </div>
   </div>
   <div class="hero-right">
@@ -1215,6 +1246,23 @@ function addProject() {
   document.getElementById('newUrl').value = '';
   document.getElementById('newDesc').value = '';
   toggleAddForm();
+}
+
+// Mobile Floating Cards Toggle and Auto-Hide Logic
+let cardTimer;
+function toggleCards() {
+  const cards = document.querySelector('.hero-right');
+  cards.classList.toggle('show-cards'); // Turns them on and off
+
+  // Clear any existing timer so it doesn't close prematurely
+  clearTimeout(cardTimer);
+
+  // If the cards are now showing, set the timer to hide them after 2 minutes
+  if (cards.classList.contains('show-cards')) {
+    cardTimer = setTimeout(() => {
+      cards.classList.remove('show-cards');
+    }, 120000); // 120000ms = 2 minutes
+  }
 }
 
 // Scroll reveal
