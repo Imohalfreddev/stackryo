@@ -251,7 +251,12 @@ nav {
   border: 1px solid var(--border);
   padding: 20px 24px;
   animation: floatY 4s ease-in-out infinite;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: border-color 0.2s;
 }
+.float-card:hover { border-color: var(--accent); }
 .float-card:nth-child(1) { top: 0; right: 0; width: 240px; animation-delay: 0s; }
 .float-card:nth-child(2) { top: 140px; left: 20px; width: 200px; animation-delay: 1s; }
 .float-card:nth-child(3) { bottom: 60px; right: 40px; width: 220px; animation-delay: 2s; }
@@ -786,16 +791,16 @@ footer {
     </div>
   </div>
   <div class="hero-right">
-    <div class="float-card">
+    <a href="https://imoh-market.vercel.app/" target="_blank" class="float-card">
       <div class="float-card-label"><span class="float-dot"></span>Live Project</div>
       <div class="float-card-title">ImohMarket</div>
       <div class="float-card-sub">Automotive Marketplace · Full Stack</div>
-    </div>
-    <div class="float-card">
+    </a>
+    <a href="https://emp-mgmt-kj5w.vercel.app/" target="_blank" class="float-card">
       <div class="float-card-label"><span class="float-dot"></span>Live Project</div>
       <div class="float-card-title">WorkFlow SaaS</div>
       <div class="float-card-sub">Employee Management · Multi-Tenant</div>
-    </div>
+    </a>
     <div class="float-card">
       <div class="float-card-label">Capability</div>
       <div class="float-card-title">End-to-End</div>
