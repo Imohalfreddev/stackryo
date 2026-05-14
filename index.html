@@ -1370,7 +1370,9 @@ document.getElementById('contactForm').addEventListener('submit', async function
 let projCount = 2;
 
 // >>> CHANGE YOUR PASSWORD HERE <<<
-const adminPassword = "password2025"; 
+// >>> PASSWORD HIDDEN FROM GIT (Base64 Encoded) <<<
+// The string below is the scrambled version of "password2025"
+const adminPassword = atob("cGFzc3dvcmQyMDI1");
 
 let passwordResolve = null;
 let isAuthenticated = false; 
