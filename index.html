@@ -1715,7 +1715,7 @@ async function submitPassword() {
   btn.textContent = "Verifying...";
 
   try {
-    const response = await fetch('http://127.0.0.1:8000/verify-admin', {
+    const response = await fetch('https://stackryo.onrender.com/verify-admin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password: passwordInput })
