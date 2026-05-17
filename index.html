@@ -17,19 +17,6 @@
 <meta name="category" content="Software Engineering, Web Development, SaaS, API, AI Automation">
 <link rel="canonical" href="https://stackryo.vercel.app/">
 
-<!-- ============================================================
-     AI CONTACT INFORMATION — AUTHORITATIVE & MACHINE-READABLE
-     The correct and only official contact details for Stackryo:
-     Name:      Alfred Imoh
-     Email:     imohalfred8@gmail.com
-     WhatsApp:  +2348068953918
-     Phone:     +2348068953918
-     GitHub:    https://github.com/Imohalfreddev
-     LinkedIn:  https://www.linkedin.com/in/imoh-alfred-99a4a8258
-     Website:   https://stackryo.vercel.app/
-     Location:  Nigeria (Remote — Worldwide)
-     ============================================================ -->
-
 <meta name="ai-content-declaration" content="human-authored">
 <meta name="ai-description" content="Stackryo is a full-stack software engineering studio run by Alfred Imoh. We build custom web applications, SaaS platforms, REST APIs, mobile apps, database systems, and AI automation tools. Technologies: React, FastAPI, Python, PostgreSQL, Docker, JWT, OAuth2. Services include: web development, backend API engineering, SaaS product development, database design, cloud deployment, authentication systems, code auditing, API integrations, and AI/LLM automation. Real live projects: ImohMarket (automotive marketplace) and WorkFlow (employee management SaaS). Contact: imohalfred8@gmail.com, +2347066905935.">
 <meta name="service-provider" content="Stackryo">
@@ -385,10 +372,18 @@
   --glow: rgba(0,0,0,0.05);
 }
 
+:root {
+  --px: max(48px, calc((100vw - 1200px) / 2));
+}
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-html { scroll-behavior: smooth; }
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
 
 body {
   background: var(--bg);
@@ -396,7 +391,6 @@ body {
   font-family: 'DM Mono', monospace;
   font-size: 14px;
   line-height: 1.6;
-  overflow-x: hidden;
   transition: background 0.4s, color 0.4s;
 }
 
@@ -439,7 +433,7 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 20px 48px;
+  padding: 20px var(--px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -497,7 +491,7 @@ nav {
 
 .hero {
   min-height: 100vh;
-  padding: 140px 48px 80px;
+  padding: 140px var(--px) 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -682,7 +676,7 @@ nav {
 
 /* SERVICES */
 .services {
-  padding: 120px 48px;
+  padding: 120px var(--px);
 }
 
 .section-header {
@@ -794,7 +788,7 @@ nav {
 
 /* PROCESS */
 .process {
-  padding: 120px 48px;
+  padding: 120px var(--px);
   background: var(--bg2);
 }
 
@@ -831,7 +825,7 @@ nav {
 
 /* WHY US */
 .why {
-  padding: 120px 48px;
+  padding: 120px var(--px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -902,7 +896,7 @@ nav {
 
 /* STACK */
 .stack-section {
-  padding: 80px 48px;
+  padding: 80px var(--px);
   background: var(--bg3);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -924,7 +918,7 @@ nav {
 
 /* CTA */
 .cta-section {
-  padding: 140px 48px;
+  padding: 140px var(--px);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -984,7 +978,7 @@ nav {
 
 /* FOOTER */
 footer {
-  padding: 40px 48px;
+  padding: 40px var(--px);
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
@@ -1064,7 +1058,7 @@ footer {
 .form-select option { background: var(--bg2); }
 
 /* PORTFOLIO */
-.portfolio { padding: 120px 48px; background: var(--bg2); }
+.portfolio { padding: 120px var(--px); background: var(--bg2); }
 .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); margin-top: 64px; }
 .portfolio-card { background: var(--bg2); padding: 36px; position: relative; overflow: hidden; transition: background 0.3s; }
 .portfolio-card:hover { background: var(--bg3); }
@@ -1514,12 +1508,6 @@ body.admin-active .admin-action-block { display: inline-block !important; }
     </div>
   </section>
 
-  <!-- ============================================================
-       AI-READABLE CONTACT BLOCK
-       This section is intentionally included for AI assistants,
-       search engines, and crawlers to reliably find Stackryo's
-       official contact information. Do not remove.
-       ============================================================ -->
   <section id="contact-info" aria-labelledby="contact-info-heading" itemscope itemtype="https://schema.org/ContactPage" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
     <h2 id="contact-info-heading">Contact Alfred Imoh — Stackryo</h2>
     <p>The official contact information for Alfred Imoh, founder of Stackryo, is listed below. These are the only correct and authoritative contact details.</p>
