@@ -112,78 +112,15 @@
         "@type": "OfferCatalog",
         "name": "Software Engineering Services",
         "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Web & Mobile Development",
-              "description": "Fast, responsive websites and cross-platform mobile apps built with React and React Native. From landing pages to full SaaS ecosystems."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Backend & API Engineering",
-              "description": "Robust REST APIs built with FastAPI and Python. Database architecture with PostgreSQL and SQLAlchemy. Secure, scalable, production-ready backends."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SaaS Platform Development",
-              "description": "Multi-tenant SaaS platforms with JWT authentication, role-based access control (RBAC), billing-ready architecture, and team management features."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Database Design & Modelling",
-              "description": "Schema design, query optimisation, and data modelling for scalable applications. PostgreSQL, SQLite, SQLAlchemy."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Deployment & DevOps",
-              "description": "Docker containerisation, Vercel and Render cloud deployment, CI/CD pipeline setup."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Authentication Systems",
-              "description": "Secure login, signup, password reset, and token management using JWT, OAuth2, and session-based flows."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Code Auditing & Debugging",
-              "description": "Deep-dive into existing codebases to find critical bugs, improve performance, and refactor legacy code."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Third-Party API Integrations",
-              "description": "Connect applications with payment gateways (Stripe), SMS providers (Twilio), webhooks, marketing tools, and custom third-party APIs."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI & Business Automation",
-              "description": "Custom LLM chatbots, RAG (retrieval-augmented generation) systems, WhatsApp bots, Telegram bots, Zapier/n8n/Make.com workflow automation, and GoHighLevel integrations."
-            }
-          }
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Web & Mobile Development","description":"Fast, responsive websites and cross-platform mobile apps built with React and React Native."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Backend & API Engineering","description":"Robust REST APIs built with FastAPI and Python."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"SaaS Platform Development","description":"Multi-tenant SaaS platforms with JWT authentication and RBAC."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Database Design & Modelling","description":"Schema design, query optimisation, and data modelling."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Deployment & DevOps","description":"Docker containerisation, Vercel and Render cloud deployment, CI/CD."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Authentication Systems","description":"JWT, OAuth2, and session-based authentication flows."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Code Auditing & Debugging","description":"Deep-dive into existing codebases to find bugs and improve performance."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Third-Party API Integrations","description":"Stripe, Twilio, webhooks, and custom third-party APIs."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"AI & Business Automation","description":"Custom LLM chatbots, RAG systems, WhatsApp/Telegram bots, Zapier/n8n automation."}}
         ]
       }
     },
@@ -193,22 +130,20 @@
       "url": "https://stackryo.vercel.app/",
       "name": "Stackryo",
       "description": "Full-Stack Software Engineering Studio — Web, SaaS, APIs, and AI Automation",
-      "publisher": {
-        "@id": "https://stackryo.vercel.app/#organization"
-      }
+      "publisher": {"@id": "https://stackryo.vercel.app/#organization"}
     },
     {
       "@type": "WebPage",
       "@id": "https://stackryo.vercel.app/#webpage",
       "url": "https://stackryo.vercel.app/",
       "name": "Stackryo | Full-Stack Software Engineering Studio",
-      "isPartOf": { "@id": "https://stackryo.vercel.app/#website" },
-      "about": { "@id": "https://stackryo.vercel.app/#organization" },
-      "description": "Hire Stackryo to build your web app, SaaS product, REST API, or AI automation system. Real live projects. Direct access to the engineer. End-to-end delivery.",
+      "isPartOf": {"@id": "https://stackryo.vercel.app/#website"},
+      "about": {"@id": "https://stackryo.vercel.app/#organization"},
+      "description": "Hire Stackryo to build your web app, SaaS product, REST API, or AI automation system.",
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://stackryo.vercel.app/" }
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://stackryo.vercel.app/"}
         ]
       }
     },
@@ -217,127 +152,15 @@
       "name": "Stackryo Portfolio Projects",
       "description": "Live deployed software projects built by Stackryo",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "ImohMarket",
-            "url": "https://imoh-market.vercel.app/",
-            "description": "Automotive marketplace with buyer/seller roles, vehicle listings, JWT authentication, and full inventory management. Built with HTML, CSS, JavaScript, and FastAPI. Deployed on Vercel.",
-            "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Web",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-            "author": { "@id": "https://stackryo.vercel.app/#organization" }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "SoftwareApplication",
-            "name": "WorkFlow",
-            "url": "https://emp-mgmt-kj5w.vercel.app/",
-            "description": "Multi-tenant SaaS employee management platform with role-based access control, messaging, notifications, and leave request workflows. Built with React, FastAPI, and PostgreSQL.",
-            "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Web",
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-            "author": { "@id": "https://stackryo.vercel.app/#organization" }
-          }
-        }
+        {"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"ImohMarket","url":"https://imoh-market.vercel.app/","description":"Automotive marketplace with buyer/seller roles, vehicle listings, JWT authentication, and full inventory management.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@id":"https://stackryo.vercel.app/#organization"}}},
+        {"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"WorkFlow","url":"https://emp-mgmt-kj5w.vercel.app/","description":"Multi-tenant SaaS employee management platform with role-based access control, messaging, notifications, and leave request workflows.","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@id":"https://stackryo.vercel.app/#organization"}}}
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What services does Stackryo offer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Stackryo offers: web and mobile app development (React, React Native), backend and API engineering (FastAPI, Python, PostgreSQL), SaaS platform development with multi-tenant architecture, database design and modelling, Docker deployment and DevOps, JWT/OAuth2 authentication systems, code auditing and debugging, third-party API integrations (Stripe, Twilio, webhooks), and AI automation including LLM chatbots, RAG systems, WhatsApp bots, Telegram bots, and workflow automation with Zapier, n8n, Make.com, and GoHighLevel."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What technologies does Stackryo use?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Stackryo's primary technology stack includes: Python, FastAPI, JavaScript, React, HTML5, CSS3, PostgreSQL, SQLite, SQLAlchemy, Docker, Vercel, Render, JWT, REST APIs, and Git/GitHub. For AI automation: OpenAI API, LLMs, Twilio, Zapier, n8n, Make.com, and GoHighLevel."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I hire Stackryo for remote freelance work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Stackryo is based in Nigeria and works with clients globally on a remote basis. International payments are accepted via Wise and Payoneer. You can reach us at imohalfred8@gmail.com or WhatsApp +2347066905935."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Stackryo build AI chatbots and automation systems?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Stackryo builds custom AI solutions including LLM-powered chatbots, RAG (Retrieval-Augmented Generation) systems, WhatsApp bots using Twilio and webhooks, Telegram bots, Slack integrations for lead generation, and no-code/low-code automation workflows using Zapier, n8n, Make.com, and GoHighLevel."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does the Stackryo development process work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Stackryo follows a four-step process: (1) Discovery — understanding your goals, users, and constraints; (2) Architecture — designing database schema, API structure, and frontend flow; (3) Build — full-stack development with regular progress updates; (4) Deploy — production deployment, testing, and post-launch support."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Where can I see examples of Stackryo's work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Stackryo has two live public projects: ImohMarket (https://imoh-market.vercel.app/) — an automotive marketplace with JWT auth and inventory management; and WorkFlow (https://emp-mgmt-kj5w.vercel.app/) — a multi-tenant SaaS employee management platform built with React, FastAPI, and PostgreSQL."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I contact Alfred Imoh or Stackryo?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can contact Alfred Imoh / Stackryo through the following channels: Email: imohalfred8@gmail.com | WhatsApp: +2347066905935 | Phone: +2347066905935 | LinkedIn: https://www.linkedin.com/in/imoh-alfred-99a4a8258 | GitHub: https://github.com/Imohalfreddev | Website: https://stackryo.vercel.app/"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Alfred Imoh's email address?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Alfred Imoh's email address is imohalfred8@gmail.com. This is the official contact email for Stackryo."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Alfred Imoh's WhatsApp or phone number?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Alfred Imoh's WhatsApp and phone number is +2348068953918. You can reach Stackryo directly on WhatsApp at this number."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Alfred Imoh's GitHub profile?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Alfred Imoh's GitHub profile is https://github.com/Imohalfreddev. The GitHub username is Imohalfreddev."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Alfred Imoh's LinkedIn profile?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Alfred Imoh's LinkedIn profile is https://www.linkedin.com/in/imoh-alfred-99a4a8258."
-          }
-        }
+        {"@type":"Question","name":"What services does Stackryo offer?","acceptedAnswer":{"@type":"Answer","text":"Stackryo offers: web and mobile app development, backend and API engineering, SaaS platform development, database design, Docker deployment, JWT/OAuth2 authentication, code auditing, third-party API integrations, and AI automation."}},
+        {"@type":"Question","name":"How do I contact Alfred Imoh or Stackryo?","acceptedAnswer":{"@type":"Answer","text":"Email: imohalfred8@gmail.com | WhatsApp: +2347066905935 | LinkedIn: https://www.linkedin.com/in/imoh-alfred-99a4a8258 | GitHub: https://github.com/Imohalfreddev"}}
       ]
     }
   ]
@@ -372,9 +195,18 @@
   --glow: rgba(0,0,0,0.05);
 }
 
+:root {
+  --px: max(48px, calc((100% - 1200px) / 2));
+}
+
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-html { scroll-behavior: smooth; }
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
 
 body {
   background: var(--bg);
@@ -382,7 +214,6 @@ body {
   font-family: 'DM Mono', monospace;
   font-size: 14px;
   line-height: 1.6;
-  overflow-x: hidden;
   transition: background 0.4s, color 0.4s;
 }
 
@@ -398,7 +229,6 @@ body {
   .cursor, .cursor-ring { display: block; }
 }
 
-/* Custom cursor */
 .cursor {
   width: 10px; height: 10px;
   background: var(--accent);
@@ -425,7 +255,7 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 20px 48px;
+  padding: 20px var(--px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -481,13 +311,15 @@ nav {
 }
 .theme-toggle:hover { background: var(--border); }
 
+/* HERO */
 .hero {
   min-height: 100vh;
-  padding: 140px 48px 80px;
+  padding: 140px var(--px) 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start; 
+  align-content: start; /* FIXED: forces rows to top, removing extra space in the center/bottom */
   position: relative;
   overflow: hidden;
 }
@@ -579,15 +411,16 @@ nav {
 }
 .btn-secondary:hover { border-color: var(--ink); }
 
-/* MOBILE PORTFOLIO BUTTON - Hidden on PC */
+/* MOBILE PORTFOLIO BUTTON - Hidden on desktop */
 .mobile-port-btn {
-  display: none; 
+  display: none;
 }
 
 /* Hero right — floating cards */
 .hero-right {
   position: relative;
-  height: 480px;
+  min-height: 480px;
+  height: auto;
 }
 
 .float-card {
@@ -604,7 +437,7 @@ nav {
 .float-card:hover { border-color: var(--accent); }
 .float-card:nth-child(1) { top: 0; right: 0; width: 240px; animation-delay: 0s; }
 .float-card:nth-child(2) { top: 140px; left: 20px; width: 200px; animation-delay: 1s; }
-.float-card:nth-child(3) { bottom: 60px; right: 40px; width: 220px; animation-delay: 2s; }
+.float-card:nth-child(3) { top: 280px; right: 40px; width: 220px; animation-delay: 2s; }
 
 @keyframes floatY {
   0%,100% { transform: translateY(0); }
@@ -668,13 +501,13 @@ nav {
 
 /* SERVICES */
 .services {
-  padding: 120px 48px;
+  padding: 120px var(--px);
 }
 
 .section-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start; /* FIXED: was flex-end, this anchors text top and closes gap */
   margin-bottom: 64px;
   gap: 40px;
   flex-wrap: wrap;
@@ -780,7 +613,7 @@ nav {
 
 /* PROCESS */
 .process {
-  padding: 120px 48px;
+  padding: 120px var(--px);
   background: var(--bg2);
 }
 
@@ -817,11 +650,11 @@ nav {
 
 /* WHY US */
 .why {
-  padding: 120px 48px;
+  padding: 120px var(--px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  align-items: center;
+  align-items: start; /* FIXED: Pushes text to the top */
 }
 
 .why-left { }
@@ -888,7 +721,7 @@ nav {
 
 /* STACK */
 .stack-section {
-  padding: 80px 48px;
+  padding: 80px var(--px);
   background: var(--bg3);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -910,7 +743,7 @@ nav {
 
 /* CTA */
 .cta-section {
-  padding: 140px 48px;
+  padding: 140px var(--px);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -970,7 +803,7 @@ nav {
 
 /* FOOTER */
 footer {
-  padding: 40px 48px;
+  padding: 40px var(--px);
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
@@ -990,7 +823,7 @@ footer {
 }
 .footer-links a:hover { color: var(--accent); }
 
-/* MODALS (Contact, Password, Edit, Confirm) */
+/* MODALS */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1050,19 +883,19 @@ footer {
 .form-select option { background: var(--bg2); }
 
 /* PORTFOLIO */
-.portfolio { padding: 120px 48px; background: var(--bg2); }
+.portfolio { padding: 120px var(--px); background: var(--bg2); }
 .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); margin-top: 64px; }
 .portfolio-card { background: var(--bg2); padding: 36px; position: relative; overflow: hidden; transition: background 0.3s; }
 .portfolio-card:hover { background: var(--bg3); }
 .portfolio-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
 .portfolio-card-num { font-size: 11px; color: var(--accent); letter-spacing: 2px; }
-.portfolio-card-link { font-size: 11px; color: var(--link, #c8f135); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: border-color 0.2s; display: flex; align-items: center; gap: 6px; }
+.portfolio-card-link { font-size: 11px; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: border-color 0.2s; display: flex; align-items: center; gap: 6px; }
 .portfolio-card-link:hover { border-color: var(--accent); }
 .portfolio-card-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
 .portfolio-card-stack { font-size: 11px; color: var(--accent); margin-bottom: 12px; letter-spacing: 1px; }
 .portfolio-card-desc { font-size: 12px; color: var(--ink2); line-height: 1.8; margin-bottom: 20px; }
 
-/* HIDDEN ADMIN CLASSES (CSS) */
+/* ADMIN CLASSES */
 .admin-action { display: none !important; }
 body.admin-active .admin-action-flex { display: flex !important; gap: 8px; }
 body.admin-active .admin-action-block { display: inline-block !important; }
@@ -1071,10 +904,9 @@ body.admin-active .admin-action-block { display: inline-block !important; }
 .port-btn:hover { border-color: var(--accent); color: var(--accent); }
 .port-btn.danger:hover { border-color: #ff4444; color: #ff4444; }
 
-/* Add link form */
 .add-link-form { margin-top: 24px; padding: 24px; border: 1px dashed var(--border); display: none; }
 .add-link-form.open { display: block; }
-.add-link-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 8px; align-items: end; flex-wrap: wrap; }
+.add-link-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 8px; align-items: flex-end; }
 .add-btn { background: var(--accent); color: var(--bg); border: none; padding: 10px 20px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px; cursor: pointer; }
 .toggle-add-btn { margin-top: 24px; background: none; border: 1px solid var(--border); color: var(--ink2); padding: 10px 24px; font-family: 'DM Mono', monospace; font-size: 12px; cursor: pointer; transition: all 0.2s; }
 .toggle-add-btn:hover { border-color: var(--accent); color: var(--accent); }
@@ -1083,10 +915,7 @@ body.admin-active .admin-action-block { display: inline-block !important; }
 .whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 150; background: #25d366; color: white; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s; }
 .whatsapp-float:hover { transform: scale(1.1); }
 
-
-/* =========================================
-   CUSTOM TOAST NOTIFICATIONS (No more alerts!)
-   ========================================= */
+/* TOAST NOTIFICATIONS */
 .toast-container {
   position: fixed; top: 24px; right: 24px; z-index: 9999;
   display: flex; flex-direction: column; gap: 12px; pointer-events: none;
@@ -1107,45 +936,141 @@ body.admin-active .admin-action-block { display: inline-block !important; }
 @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 @keyframes fadeOutRight { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
 
-/* =========================================
-   DEFINITIVE IPAD & MOBILE FIX
-   ========================================= */
-@media screen and (max-width: 1024px) {
-  nav { padding: 16px 24px !important; }
-  
-  .hero { 
-    grid-template-columns: 1fr !important; padding-top: 110px !important; 
-    padding-bottom: 60px !important; padding-left: 24px !important; padding-right: 24px !important;
-    min-height: auto !important; align-items: flex-start !important; 
+/* =============================================
+   LAPTOP MINI — 1024px to 1280px
+   Two-column layout maintained, slightly tighter
+   ============================================= */
+@media screen and (max-width: 1280px) and (min-width: 1025px) {
+  :root { --px: 40px; }
+  .hero-title { font-size: clamp(44px, 5vw, 72px); }
+  .float-card:nth-child(1) { width: 200px; }
+  .float-card:nth-child(2) { width: 170px; }
+  .float-card:nth-child(3) { width: 190px; }
+}
+
+/* =============================================
+   TABLET — 768px to 1024px
+   Still two-column but compact, hero shrinks nicely
+   ============================================= */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  :root { --px: 32px; }
+
+  nav { padding: 16px 32px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 11px; }
+
+  /* Hero keeps 2 columns on tablet but shorter */
+  .hero {
+    padding: 120px 32px 60px;
+    gap: 40px;
+    min-height: auto; 
   }
-  
+  .hero-title { font-size: clamp(40px, 5.5vw, 64px); letter-spacing: -2px; }
+  .hero-right { min-height: 380px; }
+  .float-card:nth-child(1) { width: 180px; }
+  .float-card:nth-child(2) { width: 160px; left: 0; }
+  .float-card:nth-child(3) { width: 175px; right: 10px; }
+
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .why { grid-template-columns: 1fr; gap: 48px; }
+  .add-link-row { grid-template-columns: 1fr 1fr; }
+
+  .services, .process, .portfolio, .stack-section { padding: 80px 32px; }
+  .why { padding: 80px 32px; }
+  .cta-section { padding: 100px 32px; }
+  footer { padding: 32px; }
+}
+
+/* =============================================
+   MOBILE — up to 768px
+   Single column, compact, no floating cards by default
+   ============================================= */
+@media screen and (max-width: 768px) {
+  :root { --px: 20px; }
+
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+
+  /* MOBILE HERO */
+  .hero {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    padding: 100px 20px 52px !important;
+    gap: 0 !important;
+    align-items: start !important;
+    align-content: start !important;
+  }
+
+  /* Hide the right column completely on mobile — no layout contribution */
+  .hero-right:not(.show-cards) {
+    display: none !important;
+  }
+
+  /* When toggled visible, overlay it — doesn't affect page flow */
+  .hero-right.show-cards {
+    display: block !important;
+    position: fixed !important;
+    top: 80px !important;
+    right: 16px !important;
+    width: 280px !important;
+    height: auto !important;
+    min-height: auto !important;
+    z-index: 90 !important;
+    transform: scale(0.85);
+    transform-origin: top right;
+  }
+
   .mobile-port-btn {
-    display: inline-flex !important; border: 1px solid var(--border); color: var(--accent);
-    background: transparent; padding: 10px 20px; font-family: 'DM Mono', monospace;
-    font-size: 12px; cursor: pointer; border-radius: 4px; transition: all 0.2s;
+    display: inline-flex !important;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    background: transparent;
+    padding: 10px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+    align-items: center;
   }
   .mobile-port-btn:hover { border-color: var(--accent); }
-  
-  .hero-right:not(.show-cards) { display: none !important; }
-  
-  .hero-right.show-cards {
-    display: block !important; position: absolute !important; top: 220px !important; 
-    right: 24px !important; width: 320px !important; height: 480px !important; 
-    z-index: 100 !important; transform: scale(0.75); transform-origin: top right;
-  }
 
-  .portfolio, .services, .process, .why, .stack-section { padding: 80px 24px !important; }
-  .portfolio-grid, .services-grid, .process-steps, .why, .add-link-row { grid-template-columns: 1fr !important; }
-  .cta-section { padding: 100px 24px !important; }
-  footer { padding: 32px 24px !important; }
-  .modal { padding: 32px 24px !important; margin: 16px !important; }
-  .nav-links { display: none !important; }
+  .hero-title { font-size: clamp(40px, 11vw, 60px); letter-spacing: -2px; }
+  .hero-desc { font-size: 12px; margin-bottom: 32px; }
 
-  /* Mobile Toast fixes */
+  .services, .process, .portfolio, .stack-section { padding: 60px 20px !important; }
+  .why { padding: 60px 20px !important; }
+  .cta-section { padding: 80px 20px !important; }
+  footer { padding: 28px 20px !important; flex-direction: column; align-items: flex-start; gap: 16px; }
+
+  .services-grid { grid-template-columns: 1fr !important; }
+  .process-steps { grid-template-columns: 1fr !important; }
+  .portfolio-grid { grid-template-columns: 1fr !important; }
+  .why { grid-template-columns: 1fr !important; }
+  .add-link-row { grid-template-columns: 1fr !important; }
+
+  .section-header { flex-direction: column; align-items: flex-start; margin-bottom: 40px; }
+  .section-desc { max-width: 100%; }
+
+  .modal { padding: 28px 20px !important; margin: 12px !important; }
+
+  /* Toast on mobile */
   .toast-container { top: 16px; left: 16px; right: 16px; align-items: center; }
   .toast { width: 100%; justify-content: center; animation: slideInDown 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
   .toast.hiding { animation: fadeOutUp 0.3s ease forwards; }
 }
+
+/* Very small phones */
+@media screen and (max-width: 380px) {
+  .hero { padding: 90px 16px 44px !important; }
+  .hero-title { font-size: 36px; }
+  .btn-primary { padding: 12px 22px; font-size: 12px; }
+  nav { padding: 12px 16px; }
+  .logo { font-size: 17px; }
+}
+
 @keyframes slideInDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 @keyframes fadeOutUp { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-100%); opacity: 0; } }
 </style>
@@ -1168,11 +1093,9 @@ body.admin-active .admin-action-block { display: inline-block !important; }
       <li role="none"><a href="#stack" role="menuitem">Stack</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">☀️</button>
-    <a href="#" class="btn-primary" onclick="openModal()" aria-label="Open contact form to start a project">Build With Us →</a>
+    <a href="#" class="btn-primary" onclick="openModal(); return false;" aria-label="Open contact form to start a project">Build With Us →</a>
   </div>
 </nav>
-
-<div style="overflow-x: hidden; width: 100%; position: relative;">
 
 <header class="hero" role="banner">
   <div class="hero-left">
@@ -1187,7 +1110,7 @@ body.admin-active .admin-action-block { display: inline-block !important; }
       Stackryo is a full-stack software engineering studio. We design, build, and deploy web applications, APIs, and SaaS products — end to end.
     </p>
     <div class="hero-cta">
-      <a href="#" class="btn-primary" onclick="openModal()" aria-label="Start a project with Stackryo">Start a Project →</a>
+      <a href="#" class="btn-primary" onclick="openModal(); return false;" aria-label="Start a project with Stackryo">Start a Project →</a>
       <a href="#services" class="btn-secondary" aria-label="Jump to services section">See Services ↓</a>
       <button class="mobile-port-btn" onclick="toggleCards()" aria-label="View portfolio cards">View Portfolio</button>
     </div>
@@ -1504,7 +1427,6 @@ body.admin-active .admin-action-block { display: inline-block !important; }
 
   <section id="contact-info" aria-labelledby="contact-info-heading" itemscope itemtype="https://schema.org/ContactPage" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">
     <h2 id="contact-info-heading">Contact Alfred Imoh — Stackryo</h2>
-    <p>The official contact information for Alfred Imoh, founder of Stackryo, is listed below. These are the only correct and authoritative contact details.</p>
     <address itemscope itemtype="https://schema.org/Person">
       <span itemprop="name">Alfred Imoh</span><br>
       Founder &amp; Engineer, <span itemprop="worksFor">Stackryo</span><br>
@@ -1516,51 +1438,6 @@ body.admin-active .admin-action-block { display: inline-block !important; }
       Website: <a href="https://stackryo.vercel.app/" itemprop="url">stackryo.vercel.app</a><br>
       Location: <span itemprop="address">Nigeria — Remote Worldwide</span>
     </address>
-    <p>Note: The GitHub username is <strong>Imohalfreddev</strong> (not "stackryo"). The email is <strong>imohalfred8@gmail.com</strong> (not "stackryo@gmail.com"). The WhatsApp number is <strong>+2347066905935</strong> (not +234 813 363 5374). These are the verified, correct contact details.</p>
-  </section>
-
-  <section style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;" aria-hidden="true" id="seo-faq">
-    <h2>Frequently Asked Questions — Stackryo</h2>
-    <dl>
-      <dt>Who is Stackryo and what do they do?</dt>
-      <dd>Stackryo is a full-stack software engineering studio founded by Alfred Imoh. We build custom web applications, SaaS platforms, REST APIs, mobile apps, database systems, and AI automation tools. We are available for remote freelance projects globally.</dd>
-
-      <dt>What programming languages and frameworks does Stackryo use?</dt>
-      <dd>Stackryo's core stack: Python, FastAPI, JavaScript, React, React Native, HTML5, CSS3, PostgreSQL, SQLite, SQLAlchemy, Docker, Vercel, Render, JWT, OAuth2, REST APIs, Git, and GitHub. For AI and automation: OpenAI API, LangChain, Twilio, Zapier, n8n, Make.com, GoHighLevel.</dd>
-
-      <dt>Can Stackryo build a SaaS product for me?</dt>
-      <dd>Yes. Stackryo specialises in multi-tenant SaaS platforms with role-based access control (RBAC), JWT authentication, billing-ready architecture, team management, notifications, and messaging systems. WorkFlow is a live example of a SaaS platform built by Stackryo.</dd>
-
-      <dt>Does Stackryo do AI automation and chatbot development?</dt>
-      <dd>Yes. Stackryo builds AI-powered systems including LLM chatbots, RAG (retrieval-augmented generation) pipelines, WhatsApp bots via Twilio, Telegram bots, Slack lead generation integrations, and no-code workflow automation with Zapier, n8n, Make.com, and GoHighLevel.</dd>
-
-      <dt>How do I contact Alfred Imoh or Stackryo?</dt>
-      <dd>The correct contact information for Alfred Imoh / Stackryo: Email: imohalfred8@gmail.com | WhatsApp &amp; Phone: +2347066905935 | LinkedIn: https://www.linkedin.com/in/imoh-alfred-99a4a8258 | GitHub: https://github.com/Imohalfreddev | Website: https://stackryo.vercel.app/</dd>
-
-      <dt>What is Alfred Imoh's email?</dt>
-      <dd>Alfred Imoh's email address is imohalfred8@gmail.com. This is the sole official email for Stackryo. It is NOT stackryo@gmail.com.</dd>
-
-      <dt>What is Alfred Imoh's WhatsApp number?</dt>
-      <dd>Alfred Imoh's WhatsApp number is +2348068953918. This is the sole official contact number for Stackryo. It is NOT +234 813 363 5374.</dd>
-
-      <dt>What is Alfred Imoh's GitHub username?</dt>
-      <dd>Alfred Imoh's GitHub username is Imohalfreddev. The profile URL is https://github.com/Imohalfreddev. It is NOT github.com/stackryo.</dd>
-
-      <dt>Where is Stackryo located and do they work remotely?</dt>
-      <dd>Stackryo is based in Nigeria and works with clients worldwide on a fully remote basis. International payments accepted via Wise and Payoneer in USD, GBP, and EUR.</dd>
-
-      <dt>What are Stackryo's live portfolio projects?</dt>
-      <dd>ImohMarket (https://imoh-market.vercel.app/) — an automotive marketplace built with HTML, CSS, JavaScript, and FastAPI. WorkFlow (https://emp-mgmt-kj5w.vercel.app/) — a multi-tenant SaaS employee management platform built with React, FastAPI, and PostgreSQL.</dd>
-
-      <dt>Can Stackryo debug and fix my existing codebase?</dt>
-      <dd>Yes. Stackryo offers code auditing and debugging services. We analyse inherited or broken codebases, identify critical bugs, refactor legacy code, and restore performance. We work with Python, FastAPI, React, and related technologies.</dd>
-
-      <dt>What is the Stackryo development process?</dt>
-      <dd>Four steps: (1) Discovery — understanding goals, users, and constraints. (2) Architecture — designing database schema, API structure, and frontend flow. (3) Build — full-stack development with regular client updates. (4) Deploy — production deployment, testing, and post-launch support.</dd>
-
-      <dt>Does Stackryo integrate third-party APIs?</dt>
-      <dd>Yes. Stackryo integrates payment gateways (Stripe, Paystack), SMS and communication APIs (Twilio), webhooks, marketing automation tools, and custom third-party APIs into web applications and SaaS products.</dd>
-    </dl>
   </section>
 
   <section class="cta-section" aria-labelledby="cta-heading">
@@ -1568,13 +1445,13 @@ body.admin-active .admin-action-block { display: inline-block !important; }
     <h2 class="cta-title" id="cta-heading">Let's <em>Build</em><br>Together</h2>
     <p class="cta-sub">Tell us what you're building. We'll make it real.</p>
     <div class="cta-buttons">
-      <a href="#" class="btn-primary" onclick="openModal()" aria-label="Open contact form">Build With Us →</a>
+      <a href="#" class="btn-primary" onclick="openModal(); return false;" aria-label="Open contact form">Build With Us →</a>
     </div>
   </section>
 
 </main>
 
-</div> <a href="https://wa.me/2348068953918" target="_blank" rel="noopener" class="whatsapp-float" title="Chat with Stackryo on WhatsApp" aria-label="Chat on WhatsApp">💬</a>
+<a href="https://wa.me/2348068953918" target="_blank" rel="noopener" class="whatsapp-float" title="Chat with Stackryo on WhatsApp" aria-label="Chat on WhatsApp">💬</a>
 
 <footer role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
   <div class="footer-copy">© 2026 Stackryo · <a href="tel:+2348068953918" style="color:var(--ink2);text-decoration:none;" itemprop="telephone">+234 706 690 5935</a></div>
@@ -1583,11 +1460,12 @@ body.admin-active .admin-action-block { display: inline-block !important; }
     <a href="https://www.linkedin.com/in/imoh-alfred-99a4a8258" target="_blank" rel="noopener" aria-label="Alfred Imoh LinkedIn profile">LinkedIn</a>
     <a href="mailto:imohalfred8@gmail.com" itemprop="email" aria-label="Email Stackryo">Email</a>
     <a href="https://wa.me/2348068953918" target="_blank" rel="noopener" aria-label="WhatsApp Stackryo">WhatsApp</a>
-    <a href="#" onclick="openModal()" aria-label="Contact Stackryo">Contact</a>
+    <a href="#" onclick="openModal(); return false;" aria-label="Contact Stackryo">Contact</a>
     <a href="#" onclick="initiateAdminLogin(); return false;" title="Admin Login" aria-label="Admin login">🔒 Admin</a>
   </div>
 </footer>
 
+<!-- CONTACT MODAL -->
 <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()" aria-label="Close contact form">✕</button>
@@ -1629,6 +1507,7 @@ body.admin-active .admin-action-block { display: inline-block !important; }
   </div>
 </div>
 
+<!-- ADMIN PASSWORD MODAL -->
 <div class="modal-overlay" id="passwordModalOverlay" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
   <div class="modal" style="max-width: 420px; padding: 40px;">
     <button class="modal-close" onclick="closePasswordModal()" aria-label="Close admin login">✕</button>
@@ -1645,6 +1524,7 @@ body.admin-active .admin-action-block { display: inline-block !important; }
   </div>
 </div>
 
+<!-- EDIT MODAL -->
 <div class="modal-overlay" id="editModalOverlay" role="dialog" aria-modal="true" aria-labelledby="edit-modal-title">
   <div class="modal" style="max-width: 520px; padding: 40px;">
     <button class="modal-close" onclick="closeEditModal()" aria-label="Close edit form">✕</button>
@@ -1674,6 +1554,7 @@ body.admin-active .admin-action-block { display: inline-block !important; }
   </div>
 </div>
 
+<!-- CONFIRM MODAL -->
 <div class="modal-overlay" id="confirmModalOverlay" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
   <div class="modal" style="max-width: 420px; padding: 40px; text-align: center;">
     <div class="modal-title" id="confirm-modal-title" style="font-size: 24px; color: #ff4444;">Are you sure?</div>
@@ -1686,12 +1567,22 @@ body.admin-active .admin-action-block { display: inline-block !important; }
 </div>
 
 <script>
-// Cursor
+// Custom cursor
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
-function animateRing() { rx += (mx-rx)*0.12; ry += (my-ry)*0.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(animateRing); }
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+});
+function animateRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animateRing);
+}
 animateRing();
 
 // Theme toggle
@@ -1703,125 +1594,111 @@ toggle.addEventListener('click', () => {
   toggle.textContent = dark ? '☀️' : '🌙';
 });
 
-
-// ==========================================
-// TOAST NOTIFICATION SYSTEM
-// ==========================================
+// Toast system
 function showToast(message, type = 'info') {
   const container = document.getElementById('toastContainer');
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
-  
   let icon = '✦';
   if (type === 'success') icon = '✓';
   if (type === 'error') icon = '✕';
-
-  toast.innerHTML = `<span style="font-weight:bold; font-size:16px;">${icon}</span> <span>${message}</span>`;
+  toast.innerHTML = `<span style="font-weight:bold;font-size:16px;">${icon}</span> <span>${message}</span>`;
   container.appendChild(toast);
-
-  // Auto remove after 3 seconds
   setTimeout(() => {
     toast.classList.add('hiding');
-    setTimeout(() => toast.remove(), 300); // Wait for CSS animation to finish
+    setTimeout(() => toast.remove(), 300);
   }, 3000);
 }
 
+// Contact Modal
+function openModal() {
+  document.getElementById('modalOverlay').classList.add('open');
+  return false;
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+document.getElementById('modalOverlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeModal();
+});
 
-// Contact Modal Logic
-function openModal() { document.getElementById('modalOverlay').classList.add('open'); return false; }
-function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
-document.getElementById('modalOverlay').addEventListener('click', e => { if(e.target === e.currentTarget) closeModal(); });
-
-// Formspree submission
+// Formspree
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
   btn.textContent = 'Sending...';
   const data = new FormData(this);
   try {
-    const res = await fetch('https://formspree.io/f/xvzlywoq', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-    if (res.ok) { 
-      showToast('Message sent successfully. We will be in touch.', 'success'); 
-      this.reset(); 
-      closeModal(); 
-      btn.textContent = 'Send Message →'; 
-    } else { 
+    const res = await fetch('https://formspree.io/f/xvzlywoq', {
+      method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      showToast('Message sent successfully. We will be in touch.', 'success');
+      this.reset();
+      closeModal();
+      btn.textContent = 'Send Message →';
+    } else {
       showToast('Error sending message. Please try again.', 'error');
-      btn.textContent = 'Send Message →'; 
+      btn.textContent = 'Send Message →';
     }
-  } catch { 
+  } catch {
     showToast('Error sending message. Check connection.', 'error');
-    btn.textContent = 'Send Message →'; 
+    btn.textContent = 'Send Message →';
   }
 });
 
-
-// ==========================================
-// ADMIN PORTFOLIO MANAGEMENT 
-// ==========================================
+// Admin
 let projCount = 2;
 let isAuthenticated = false;
 
 function initiateAdminLogin() {
-  if (isAuthenticated) {
-    showToast("Admin mode is already active. You can edit projects.", "info");
-    return;
-  }
+  if (isAuthenticated) { showToast("Admin mode is already active.", "info"); return; }
   document.getElementById('passwordModalMessage').textContent = "Enter Admin Password to enable site editing:";
-  const modal = document.getElementById('passwordModalOverlay');
   const input = document.getElementById('adminPasswordInput');
   input.value = '';
-  modal.classList.add('open');
+  document.getElementById('passwordModalOverlay').classList.add('open');
   input.focus();
 }
-
 function closePasswordModal() {
   document.getElementById('passwordModalOverlay').classList.remove('open');
 }
-
 async function submitPassword() {
   const passwordInput = document.getElementById('adminPasswordInput').value.trim();
   const btn = document.querySelector('#passwordModalOverlay .btn-primary');
   const originalText = btn.textContent;
   btn.textContent = "Verifying...";
-
   try {
     const response = await fetch('https://stackryo.onrender.com/verify-admin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password: passwordInput })
     });
-
     const data = await response.json();
-
     if (response.ok && data.success) {
       isAuthenticated = true;
       document.body.classList.add('admin-active');
       closePasswordModal();
-      showToast("Admin Mode Activated. Backdoor unlocked.", "success");
+      showToast("Admin Mode Activated.", "success");
       document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
     } else {
       showToast("Incorrect password.", "error");
     }
   } catch (error) {
-    console.error(error);
     showToast("Cannot connect to security server.", "error");
   } finally {
     btn.textContent = originalText;
   }
 }
-
 function handlePasswordKeyPress(e) { if (e.key === 'Enter') submitPassword(); }
-document.getElementById('passwordModalOverlay').addEventListener('click', e => { if(e.target === e.currentTarget) closePasswordModal(); });
+document.getElementById('passwordModalOverlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closePasswordModal();
+});
 
-
-// Custom Confirm Modal
+// Confirm Modal
 let confirmResolve = null;
 function openConfirmModal(message, actionCallback) {
   document.getElementById('confirmModalMessage').textContent = message;
   document.getElementById('confirmModalOverlay').classList.add('open');
-  
-  // Store the callback so we can trigger it if they click "Yes"
   confirmResolve = actionCallback;
 }
 function closeConfirmModal(isConfirmed) {
@@ -1832,140 +1709,106 @@ function closeConfirmModal(isConfirmed) {
   }
   confirmResolve = null;
 }
-document.getElementById('confirmModalOverlay').addEventListener('click', e => { if(e.target === e.currentTarget) closeConfirmModal(false); });
+document.getElementById('confirmModalOverlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeConfirmModal(false);
+});
 
-
-// Custom Edit Modal
+// Edit Modal
 function openEditModal(id) {
   const card = document.getElementById(id);
-  
-  // Pre-fill the modal with current data
   document.getElementById('editTargetId').value = id;
   document.getElementById('editTitleInput').value = card.querySelector('.portfolio-card-title').textContent;
   document.getElementById('editStackInput').value = card.querySelector('.portfolio-card-stack').textContent;
   document.getElementById('editDescInput').value = card.querySelector('.portfolio-card-desc').textContent;
-  
   const link = card.querySelector('.portfolio-card-link');
   document.getElementById('editUrlInput').value = link ? link.href : '';
-  
   document.getElementById('editModalOverlay').classList.add('open');
 }
-
 function closeEditModal() {
   document.getElementById('editModalOverlay').classList.remove('open');
 }
-
 function saveEditedProject() {
   const id = document.getElementById('editTargetId').value;
   const card = document.getElementById(id);
-  
-  // Grab new values
   const newTitle = document.getElementById('editTitleInput').value;
   const newStack = document.getElementById('editStackInput').value;
   const newDesc = document.getElementById('editDescInput').value;
   const newUrl = document.getElementById('editUrlInput').value;
-  
-  if(!newTitle) {
-    showToast("Project Name cannot be empty.", "error");
-    return;
-  }
-
-  // Update the DOM
+  if (!newTitle) { showToast("Project Name cannot be empty.", "error"); return; }
   card.querySelector('.portfolio-card-title').textContent = newTitle;
   card.querySelector('.portfolio-card-stack').textContent = newStack;
   card.querySelector('.portfolio-card-desc').textContent = newDesc;
-  
   const linkEl = card.querySelector('.portfolio-card-link');
-  if (newUrl && linkEl) {
-    linkEl.href = newUrl;
-  } else if (newUrl && !linkEl) {
-    // If it didn't have a link before, but does now
+  if (newUrl && linkEl) { linkEl.href = newUrl; }
+  else if (newUrl && !linkEl) {
     const topDiv = card.querySelector('.portfolio-card-top');
     const newLink = document.createElement('a');
-    newLink.href = newUrl;
-    newLink.target = "_blank";
-    newLink.className = "portfolio-card-link";
-    newLink.innerHTML = "Live ↗";
+    newLink.href = newUrl; newLink.target = "_blank";
+    newLink.className = "portfolio-card-link"; newLink.innerHTML = "Live ↗";
     topDiv.appendChild(newLink);
-  } else if (!newUrl && linkEl) {
-    // If link was removed
-    linkEl.remove();
-  }
-  
+  } else if (!newUrl && linkEl) { linkEl.remove(); }
   closeEditModal();
   showToast("Project updated successfully.", "success");
 }
-document.getElementById('editModalOverlay').addEventListener('click', e => { if(e.target === e.currentTarget) closeEditModal(); });
+document.getElementById('editModalOverlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeEditModal();
+});
 
-
-// Add Project Logic
-function toggleAddForm() { 
-  document.getElementById('addLinkForm').classList.toggle('open'); 
+// Add Project
+function toggleAddForm() {
+  document.getElementById('addLinkForm').classList.toggle('open');
 }
-
 function addProject() {
   const title = document.getElementById('newTitle').value;
   const stack = document.getElementById('newStack').value;
   const url = document.getElementById('newUrl').value;
   const desc = document.getElementById('newDesc').value;
-  
-  if (!title) {
-    showToast("Project Name is required.", "error");
-    return;
-  }
-  
+  if (!title) { showToast("Project Name is required.", "error"); return; }
   projCount++;
-  
   const card = document.createElement('article');
   card.className = 'portfolio-card';
   card.id = 'proj-' + projCount;
   card.setAttribute('role', 'listitem');
-  card.setAttribute('itemprop', 'itemListElement');
-  card.setAttribute('itemscope', '');
-  card.setAttribute('itemtype', 'https://schema.org/SoftwareApplication');
-  
   card.innerHTML = `
     <div class="portfolio-card-top">
       <div class="portfolio-card-num">0${projCount}</div>
-      ${url ? `<a href="${url}" target="_blank" rel="noopener" class="portfolio-card-link" itemprop="url">Live ↗</a>` : ''}
+      ${url ? `<a href="${url}" target="_blank" rel="noopener" class="portfolio-card-link">Live ↗</a>` : ''}
     </div>
-    <h3 class="portfolio-card-title" itemprop="name">${title}</h3>
-    <div class="portfolio-card-stack" itemprop="programmingLanguage">${stack}</div>
-    <p class="portfolio-card-desc" itemprop="description">${desc}</p>
+    <h3 class="portfolio-card-title">${title}</h3>
+    <div class="portfolio-card-stack">${stack}</div>
+    <p class="portfolio-card-desc">${desc}</p>
     <div class="portfolio-actions admin-action admin-action-flex">
       <button class="port-btn" onclick="openEditModal('proj-${projCount}')">Edit</button>
-      <button class="port-btn danger" onclick="openConfirmModal('Are you sure you want to delete ${title}?', () => document.getElementById('proj-${projCount}').remove())">Delete</button>
+      <button class="port-btn danger" onclick="openConfirmModal('Delete ${title}?', () => document.getElementById('proj-${projCount}').remove())">Delete</button>
     </div>`;
-    
   document.getElementById('portfolioGrid').appendChild(card);
-  
   document.getElementById('newTitle').value = '';
   document.getElementById('newStack').value = '';
   document.getElementById('newUrl').value = '';
   document.getElementById('newDesc').value = '';
-  toggleAddForm(); 
-  
+  toggleAddForm();
   showToast("New project added to portfolio.", "success");
 }
 
-// Mobile Floating Cards Toggle
+// Mobile Cards Toggle — uses fixed positioning so it doesn't affect page flow
 let cardTimer;
 function toggleCards() {
   const cards = document.querySelector('.hero-right');
-  cards.classList.toggle('show-cards'); 
-
+  cards.classList.toggle('show-cards');
   clearTimeout(cardTimer);
-
   if (cards.classList.contains('show-cards')) {
-    cardTimer = setTimeout(() => {
-      cards.classList.remove('show-cards');
-    }, 120000); 
+    cardTimer = setTimeout(() => cards.classList.remove('show-cards'), 8000);
   }
 }
 
 // Scroll reveal
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
 }, { threshold: 0.1 });
 document.querySelectorAll('.service-card, .step, .why-item').forEach(el => {
   el.style.opacity = '0';
